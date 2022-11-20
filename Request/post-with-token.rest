@@ -1,0 +1,49 @@
+# @name login
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username":"admin",
+  "password":"123456"
+}
+
+###
+POST http://127.0.0.1:8000/movie
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "title" : "Interstellar",
+  "director": "Christopher Nolan",
+  "year": 2014,
+  "rating": 8.2,
+  "genres": "Ciencia ficción"
+}
+###
+
+PUT http://127.0.0.1:8000/movie/2
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "id":"2",
+  "title":"The Dark Knight EDITADO",
+  "director":"Cristopher Nolan",
+  "year":2008,
+  "rating":9,
+  "genres":"Acción"
+}
+
+####
+
+GET http://127.0.0.1:8000/movie/2
+
+####
+
+DELETE http://127.0.0.1:8000/movie/9aa3f148-0b7e-4b2b-9b18-7c6d1e2cde89 
+Content-Type: application/json 
+Authorization: Bearer {{ login.response.body.token }}
+
+####
+
+GET http://127.0.0.1:8000/movie/

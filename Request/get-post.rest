@@ -1,0 +1,33 @@
+GET http://localhost:8000/movie
+
+###
+DELETE http://localhost:8000/movie/2
+
+###
+GET http://localhost:8000/movie/2
+
+###
+GET http://localhost:8000/movie/az
+
+###
+GET http://localhost:8000/movie/za
+
+###
+
+GET http://localhost:8000/movie/destacados
+
+###
+
+GET http://localhost:8000/movie?genres=Drama
+
+###
+
+GET http://localhost:8000/comment?idMovie=10
+
+###
+
+GET http://localhost:8000/comment?rating=8
+
+###
+
+GET http://localhost:8000/users
