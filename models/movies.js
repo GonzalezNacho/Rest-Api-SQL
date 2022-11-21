@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize')
-const { validate } = require('uuid')
 const { sequelize } = require('../utils/db')
 
 class Movies extends Model{ }
@@ -37,7 +36,7 @@ Movies.init({
             }
         }
     },
-    generes:{
+    genres:{
         type: DataTypes.STRING(200),
         allowNull: false
     }

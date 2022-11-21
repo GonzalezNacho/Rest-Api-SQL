@@ -4,37 +4,33 @@ const router = require("express").Router();
 let dao  = require("../dataccess/comments");
 
 /* Obtener todo los comentarios */
-router.get("/", (req, res) => {
-  res.status(200).json(dao.getAll(req.query));
+router.get("/", async (req, res) => {
+  res.status(200).json( await dao.getAll(req.query));
 });
 
 
 /* Agregar un elemento */
 
-router.post("/", middleware.validarUserLogin, (req, res) => {
+router.post("/", middleware.validarUserLogin, async (req, res) => {
   
   const body = {...req.body};
-  const data = dao.save(body);
+  const data = await dao.save(body);
   res.status(200).json(data);
 });
 
 /* Borrar un elemento */
 
-router.delete("/:id",middleware.validarUserLogin, (req, res) => {
+router.delete("/:id",middleware.validarUserLogin, async (req, res) => {
   const id = req.params.id;  
-
-  if (dao.borrar(id)) { 
-    res.sendStatus(202);
-  } else {
-    res.sendStatus(404);
-  }
+  await dao.borrar(id)
+  res.sendStatus(202);
 });
 
 /* Modificar un elemento */
-router.put("/:id", middleware.validarUserLogin, (req, res) => {
+router.put("/:id", middleware.validarUserLogin, async (req, res) => {
   const id = req.params.id;
  
-  if (dao.update(id, req.body) ) { 
+  if ( await dao.update(id, req.body) ) { 
     res.sendStatus(202);
   } else {
     res.sendStatus(404);
