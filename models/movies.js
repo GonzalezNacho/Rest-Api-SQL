@@ -43,7 +43,7 @@ Movies.init({
 }, {
     sequelize,
     underscored:true,
-    model: 'movies'
+    modelName: 'movies'
 })
 
 module.exports = Movies

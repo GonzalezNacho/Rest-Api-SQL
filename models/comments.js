@@ -31,7 +31,7 @@ Comments.init({
 }, {
     sequelize,
     underscored:true,
-    model: 'comments'
+    modelName: 'comments'
 })
 
 module.exports = Comments
