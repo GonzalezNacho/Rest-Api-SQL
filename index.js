@@ -7,7 +7,7 @@ const server = http.createServer(app);
 connectDb()
 
 sequelize.sync().then(() => {
-  console.log('tablas creadas')
+  console.log('\n\t\t\t\t\t\t******************\n\t\t\t\t\t\t* Tablas creadas *\n\t\t\t\t\t\t******************\n')
 }).catch((error) => {
   console.log('error', error)
 })

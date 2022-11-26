@@ -37,7 +37,7 @@ Movies.init({
         }
     },
     genres:{
-        type: DataTypes.STRING(200),
+        type: DataTypes.JSON,
         allowNull: false
     }
 }, {

@@ -1,0 +1,86 @@
+# @name login
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username":"admin",
+  "password":"123456"
+}
+
+###
+POST http://127.0.0.1:8000/movie/
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "title" : "Interstellar",
+  "director": "Christopher Nolan",
+  "year": 2014,
+  "rating": 8.2,
+  "genres": "Ciencia ficción"
+}
+###
+POST http://127.0.0.1:8000/movie/
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "title":"The Dark Knight",
+  "director":"Cristopher Nolan",
+  "year":2008,
+  "rating":9,
+  "genres":"Acción"
+}
+###
+POST http://127.0.0.1:8000/movie/
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "title":"Pulp Fiction",
+  "director":"Quentin Tarantino",
+  "year":1994,
+  "rating":8.6,
+  "genres":["Crimen", "Drama"]
+}
+###
+POST http://127.0.0.1:8000/movie/
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "title":"Schindler's List",
+  "director":"Steven Spielberg",
+  "year":1993,
+  "rating":9.4,
+  "genres":["Belico","Drama"]
+}
+
+###
+
+PUT http://127.0.0.1:8000/movie/2
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "id":"2",
+  "title":"The Dark Knight EDITADO",
+  "director":"Cristopher Nolan",
+  "year":2008,
+  "rating":9,
+  "genres":"Acción"
+}
+
+####
+
+GET http://127.0.0.1:8000/movie/2
+
+####
+
+DELETE http://127.0.0.1:8000/movie/2
+Content-Type: application/json 
+Authorization: Bearer {{ login.response.body.token }}
+
+####
+
+GET http://127.0.0.1:8000/movie/

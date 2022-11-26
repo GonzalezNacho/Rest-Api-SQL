@@ -9,3 +9,13 @@ Agregar paquetes: npm install <package>
 npm install express http cors uuid jsonwebtoken dotenv mysql2 sequelize
 
 npm install nodemon -g
+
+
+contenido del archivo .env:
+
+JWTSECRET=''
+DB=''
+USERDB=''
+PASSWORDDB=''
+HOSTDB=''
+PORTDB=''

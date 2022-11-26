@@ -77,7 +77,7 @@ GET http://127.0.0.1:8000/movie/2
 
 ####
 
-DELETE http://127.0.0.1:8000/movie/9aa3f148-0b7e-4b2b-9b18-7c6d1e2cde89 
+DELETE http://127.0.0.1:8000/movie/2
 Content-Type: application/json 
 Authorization: Bearer {{ login.response.body.token }}
 
