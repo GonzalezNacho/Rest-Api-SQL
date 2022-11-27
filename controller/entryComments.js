@@ -8,6 +8,18 @@ router.get("/", async (req, res) => {
   res.status(200).json( await dao.getAll(req.query));
 });
 
+/* Obtener uno especifico */
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+  const data = await dao.getOne(id);
+
+  if (data) {
+    res.status(200).json(data);
+  } else {
+    res.sendStatus(404);
+  }
+});
+
 
 /* Agregar un elemento */
 

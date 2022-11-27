@@ -11,7 +11,7 @@ npm install express http cors uuid jsonwebtoken dotenv mysql2 sequelize
 npm install nodemon -g
 
 
-contenido del archivo .env:
+en el archivo .env se encuentran las variables de entorno de la conexion a la base de datos y la secret key del json web token:
 
 JWTSECRET=''
 DB=''
