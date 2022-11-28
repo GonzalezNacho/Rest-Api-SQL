@@ -29,17 +29,7 @@ Authorization: Bearer {{ login.response.body.token }}
   "user": "alexcabj01",
   "email":"alex@gmail.com"
 }
-###
-POST http://127.0.0.1:8000/users/
-Content-Type: application/json
-Authorization: Bearer {{ login.response.body.token }}
 
-{
-  "name":"Johanna",
-  "lastname":"Fernandez",
-  "user": "Joha_numeritos",
-  "email":"johafernandez@gmail.com"
-}
 ###
 POST http://127.0.0.1:8000/users/
 Content-Type: application/json
@@ -50,6 +40,19 @@ Authorization: Bearer {{ login.response.body.token }}
   "lastname":"Beltran",
   "user": "facuBel7",
   "email":"facu_beltran@gmail.com"
+}
+
+###
+
+POST http://127.0.0.1:8000/users/
+Content-Type: application/json
+Authorization: Bearer {{ login.response.body.token }}
+
+{
+  "name":"Johanna",
+  "lastname":"Fernandez",
+  "user": "Joha_numeritos",
+  "email":"johafernandez@gmail.com"
 }
 
 ###

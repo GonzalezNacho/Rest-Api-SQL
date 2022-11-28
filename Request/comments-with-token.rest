@@ -30,8 +30,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"muy buena pelicula",
   "rating": 8,
-  "movie_id": 1,
-  "user_id": 2  
+  "movie": {
+    "id":1
+  },
+  "user":{
+    "id": 2
+  }
 }
 ###
 POST http://127.0.0.1:8000/comment/
@@ -41,8 +45,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"esperaba mas de esta pelicula",
   "rating": 4,
-  "movie_id": 2,
-  "user_id": 3
+  "movie": {
+    "id":2
+  },
+  "user":{
+    "id": 3
+  }
 }
 ###
 POST http://127.0.0.1:8000/comment/
@@ -52,8 +60,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"totalmente decepcionado",
   "rating": 1,
-  "movie_id": 2,
-  "user_id": 4 
+  "movie": {
+    "id":2
+  },
+  "user":{
+    "id": 4
+  }
 }
 
 ###
@@ -65,8 +77,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"Es la mejor pelicula que vi",
   "rating": 10,
-  "movie_id": 3,
-  "user_id": 1
+  "movie": {
+    "id": 3
+  },
+  "user":{
+    "id": 1
+  }
 }
 ###
 POST http://127.0.0.1:8000/comment/
@@ -76,8 +92,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"pelicula pochoclera, es buena pero no me volo la cabeza",
   "rating": 7,
-  "movie_id": 3,
-  "user_id": 2  
+  "movie": {
+    "id": 3
+  },
+  "user":{
+    "id": 2
+  }
 }
 ###
 POST http://127.0.0.1:8000/comment/
@@ -87,8 +107,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"excelente el mensaje que transmite",
   "rating": 8,
-  "movie_id": 4,
-  "user_id": 3
+  "movie": {
+    "id": 4
+  },
+  "user":{
+    "id": 3
+  }
 }
 ###
 POST http://127.0.0.1:8000/comment/
@@ -98,8 +122,12 @@ Authorization: Bearer {{ login.response.body.token }}
 {
   "comment":"una pieza clasica del cine",
   "rating": 9,
-  "movie_id": 4,
-  "user_id": 4 
+  "movie": {
+    "id": 4
+  },
+  "user":{
+    "id": 4
+  }
 }
 
 ###
@@ -109,16 +137,23 @@ Content-Type: application/json
 Authorization: Bearer {{ login.response.body.token }}
 
 {
-  "id":"2",
   "comment":"muy buena pelicula",
   "rating": 8,
-  "movie_id": 1,
-  "user_id": 2 
+  "movie": {
+    "id":1
+  },
+  "user":{
+    "id": 2
+  }
 }
 
 ####
 
 GET http://127.0.0.1:8000/comment/1
+
+####
+
+GET http://127.0.0.1:8000/comment
 
 ####
 

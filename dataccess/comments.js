@@ -27,11 +27,10 @@ const getAll = async (query) => {
   return datos 
 };
 
-const getOne = async (id) => { return await Comments.findByPk(id,{
+const getOne = async (id) => {return await Comments.findByPk(id,{
   include: [
-    {model: Movies, required: false},
-    {model: Users, required: false}
-  ]
+  {model: Movies, required: false},
+  {model: Users, required: false}]
 });}
 
 const save = async (body) => { 
