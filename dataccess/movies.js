@@ -1,7 +1,27 @@
 const { Movies } = require('../models/')
 
 const getAll = async (query) => {
-  const datos = await Movies.findAll()
+  let options = {
+    attributes:['id', 'title', 'year', 'rating', 'genres']
+  }
+  
+  if (query.title)
+    options = {
+      ...options, where: {
+        ...options.where,
+        title: query.title
+      }
+    }
+
+  if (query.genres)
+    options = {
+      ...options, where: {
+        ...options.where,
+        genres: query.genres
+      }
+    }
+  
+  const datos = await Movies.findAll(options)
   return datos 
 };
 

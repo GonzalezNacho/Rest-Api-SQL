@@ -46,4 +46,4 @@ Movies.init({
     modelName: 'movies'
 })
 
-module.exports = Movies
+module.exports =  Movies
