@@ -25,6 +25,7 @@ const getAll = async (query) => {
     const data = await getOne(id)
     data.name = body.name
     data.lastname = body.lastname
+    data.user = body.user
     data.email = body.email
     await data.save()
     return data;

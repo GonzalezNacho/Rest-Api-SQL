@@ -3,9 +3,10 @@ const { Comments, Movies, Users } = require('../models/')
 
 const getAll = async (query) => {
   let options = {
+    attributes:['id', 'comment', 'rating'],
     include: [
-      {model: Movies, required: false},
-      {model: Users, required: false}
+      {model: Movies, attributes:['id', 'title'], required: false},
+      {model: Users, attributes:['id', 'user'], required: false}
     ]
   }
   if (query.movie_id)
@@ -16,21 +17,23 @@ const getAll = async (query) => {
       }
     }
   
-    if (query.user_id)
-      options = {
-        ...options, where: {
-          ...options.where,
-          userId: query.user_id
-        }
+  if (query.user_id)
+    options = {
+      ...options, where: {
+        ...options.where,
+        userId: query.user_id
       }
+    }
   const datos = await Comments.findAll(options)
   return datos 
 };
 
-const getOne = async (id) => {return await Comments.findByPk(id,{
+const getOne = async (id) => {return await Comments.findByPk(id,{ 
+  attributes:['id', 'comment', 'rating'],
   include: [
-  {model: Movies, required: false},
-  {model: Users, required: false}]
+    {model: Movies, attributes:['id', 'title','director','year'], required: false},
+    {model: Users, attributes:['id', 'user','name','lastname'], required :false}
+  ]
 });}
 
 const save = async (body) => { 

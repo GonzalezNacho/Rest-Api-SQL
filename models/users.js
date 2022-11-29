@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require('sequelize')
 const { sequelize } = require('../utils/db')
 
-class Users extends Model{ }
+class Users extends Model{
+
+    getFullname() {
+        return [this.name, this.lastname].join(' ');
+    }
+}
 
 Users.init({
     id: {
@@ -14,6 +19,10 @@ Users.init({
         allowNull: false
     },
     lastname: {
+        type: DataTypes.STRING(200),
+        allowNull: false
+    },
+    user: {
         type: DataTypes.STRING(200),
         allowNull: false
     },

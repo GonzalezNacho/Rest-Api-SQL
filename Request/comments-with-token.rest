@@ -164,3 +164,7 @@ Authorization: Bearer {{ login.response.body.token }}
 ####
 
 GET http://127.0.0.1:8000/comment?movie_id=1
+
+####
+
+GET http://127.0.0.1:8000/comment?user_id=1
