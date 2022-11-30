@@ -6,7 +6,7 @@ Inicializar un proyecto: npm init
 
 Agregar paquetes: npm install <package>
 
-npm install express http cors uuid jsonwebtoken dotenv mysql2 sequelize
+npm install express http cors jsonwebtoken dotenv mysql2 sequelize
 
 npm install nodemon -g
 
