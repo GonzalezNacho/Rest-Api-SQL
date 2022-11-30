@@ -13,12 +13,12 @@ npm install nodemon -g
 
 en el archivo .env se encuentran las variables de entorno de la conexion a la base de datos y la secret key del json web token:
 
-`JWTSECRET=''<br/>
-DB=''<br/>
-USERDB=''<br/>
-PASSWORDDB=''<br/>
-HOSTDB=''<br/>
-PORTDB=''`
+`JWTSECRET=''`<br/>
+`DB=''`<br/>
+`USERDB=''`<br/>
+`PASSWORDDB=''`<br/>
+`HOSTDB=''`<br/>
+`PORTDB=''`
 
 Diagrama Entidad Relacion:
 
