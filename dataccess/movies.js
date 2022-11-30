@@ -3,7 +3,8 @@ const { Op } = require("sequelize");
 
 const getAll = async (query) => {
   let options = {
-    attributes:['id', 'title', 'year', 'rating', 'genres']
+    //attributes:['id', 'title', 'year', 'rating', 'genres']
+    attributes:{ exclude: ['createdAt','updatedAt'] }
   }
   
   if (query.title)
@@ -28,7 +29,9 @@ const getAll = async (query) => {
   return datos 
 };
 
-const getOne = async (id) => { return await Movies.findByPk(id);}
+const getOne = async (id) => { return await Movies.findByPk(id, {
+  attributes: {exclude:['createdAt', 'updatedAt']}
+});}
 
 const save = async (body) => { 
   const data = {...body};

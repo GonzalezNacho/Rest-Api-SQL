@@ -1,11 +1,33 @@
 const { Users } = require('../models/')
 
 const getAll = async (query) => {
-  const datos = await Users.findAll()
+  let options = {
+    attributes:{ exclude: ['createdAt','updatedAt'] }
+  }
+
+  if (query.name)
+    options = {
+      ...options, where: {
+        ...options.where,
+        name: query.name
+      }
+    }
+  
+    if (query.lastname)
+    options = {
+      ...options, where: {
+        ...options.where,
+        lastname: query.lastname
+      }
+    }
+
+  const datos = await Users.findAll(options)
   return datos 
 };
   
-  const getOne = async (id) => { return await Users.findByPk(id);}
+  const getOne = async (id) => { return await Users.findByPk(id,{
+    attributes:{ exclude: ['createdAt','updatedAt'] }
+  });}
 
   const save = async (body) => { 
     const data = { ...body }
