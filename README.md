@@ -22,4 +22,4 @@ PORTDB=''
 
 Diagrama Entidad Relacion:
 
-![Diagrama Entidad Relacion](https://github.com/GonzalezNacho/Rest-Api-SQL/tree/main/doc/der.png)
+![Diagrama Entidad Relacion](https://github.com/GonzalezNacho/Rest-Api-SQL/blob/main/docs/der.png)
