@@ -1,4 +1,5 @@
 const { Movies } = require('../models/')
+const { Op } = require("sequelize");
 
 const getAll = async (query) => {
   let options = {
@@ -17,7 +18,9 @@ const getAll = async (query) => {
     options = {
       ...options, where: {
         ...options.where,
-        genres: query.genres
+        genres: {
+          [Op.substring]:query.genres
+        } 
       }
     }
   
