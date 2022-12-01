@@ -25,6 +25,16 @@ const getAll = async (query) => {
       }
     }
   
+    if (query.ratingmin)
+    options = {
+      ...options, where: {
+        ...options.where,
+        rating: {
+          [Op.gte]:query.ratingmin
+        } 
+      }
+    }
+  
   const datos = await Movies.findAll(options)
   return datos 
 };

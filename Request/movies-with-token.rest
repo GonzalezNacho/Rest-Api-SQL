@@ -92,3 +92,7 @@ GET http://127.0.0.1:8000/movie?genres=Belico
 ####
 
 GET http://127.0.0.1:8000/movie?title=Interstellar
+
+####
+
+GET http://127.0.0.1:8000/movie?ratingmin=6
